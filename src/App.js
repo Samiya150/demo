@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './assets/workfam.png'
+import bell from './assets/bell.png'
+import comment from './assets/comment.png'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <nav class="navbar navbar-light bg-white">
+          <div class="container">
+            <a class="navbar-brand">
+              <img src={logo} alt="" width="66" height="45"/>
+            </a>
+            <a class="justify-content-end">
+              <img src={comment} alt="" width="20" height="20"/>
+              <img style={{marginLeft: '40px'}} src={bell} alt="" width="20" height="20"/>
+            </a>
+           
+          </div>
+        </nav>
+      </div>
+    )
+  }
 }
 
-export default App;
+
+
+

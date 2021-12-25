@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.line{
+    text-decoration: underline #387BAA;
+    text-decoration-thickness: 3px;
+    text-underline-position: under;
+    color: black;
+    cursor: default;
+}
+
+.lineblue{
+    cursor:default;
+}
+
+.greyline{
+    cursor: default;
+}
+.greyline::after{
+    width: 100%;
+    content: '';
+    display: block;
+    height: 2px;
+    background-color:#b7bbbb;
+    
+}
+
+.lineblue::after{
+    width: 22%;
+    content: '';
+    display: block;
+    height: 3px;
+    background-color:#387BAA;
+    margin-top: 10px;
+}
+
+.gallery{
+    width: 164px;
+    height: 164px;
+    margin-left: 10px;
+    margin-top: 20px ;
+    object-fit: cover;
+    
+}
+
+.addBorders{
+    border: 1px solid blue;
+}
+
+.noBorders{
+    border: none;
+}

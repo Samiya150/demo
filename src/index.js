@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Home from './home';
+import Upload from './upload'
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route exact path= "/" element={<Home/>}></Route>
+        <Route exact path= "/upload" element={<Upload/>}></Route>
+   
+     </Routes>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
