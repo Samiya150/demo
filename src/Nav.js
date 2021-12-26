@@ -4,7 +4,7 @@ import bell from './assets/bell.png'
 import comment from './assets/comment.png'
 
 
-export default class App extends Component {
+export default class Nav extends Component {
   render() {
     return (
       <div>

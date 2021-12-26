@@ -1,6 +1,9 @@
 import React, {useEffect, useState, useRef} from 'react'
 import './rough.css'
+import { Link } from 'react-router-dom'   
 import Home from './home'
+import { connect } from 'react-redux'
+import { fileUpload } from './store/mystore'
 
 const Rough = () => {
 
@@ -16,6 +19,8 @@ const Rough = () => {
         //you can carry out any file validations here...
         setImage(file);
         setPreviewUrl(URL.createObjectURL(file));
+       
+        
     }
 
     const handleOndragOver = (event) => {
@@ -64,8 +69,14 @@ const Rough = () => {
                  </div> }
                  
          </div>
+         <button class='btn' style={{backgroundColor:'#387BAA', color:'white'}} onClick={()=> this.props.fileUpload(image)|| console.log(image)}>Select</button>
+        
         </>
     )
 }
 
-export default Rough;
+const mapDispatchToProps = {
+    fileUpload
+   };
+
+export default connect(null, mapDispatchToProps)(Rough);
