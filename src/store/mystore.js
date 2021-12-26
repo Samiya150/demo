@@ -1,19 +1,23 @@
-const ADD_FILE = 'ADD_FILE'
 import { combineReducers } from 'redux';
-
+const ADD_FILE = 'ADD_FILE'
 // actions
 export function fileUpload(payload){
+  console.log(payload)
     return{
         type: 'ADD_FILE',
-        payload
+        payload,
+       
     }
+    
 }
 
 //reducers
 
 const defaultFile = [
     {
-        img: null
+        img: null,
+        blob: null
+      
     }
 ]
 function files(state= defaultFile, action){

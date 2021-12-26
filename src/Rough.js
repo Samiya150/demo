@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react'
 import './rough.css'
 import { Link } from 'react-router-dom'   
 import Home from './home'
-import { connect } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import { fileUpload } from './store/mystore'
 
 const Rough = () => {
@@ -11,12 +11,12 @@ const Rough = () => {
         const fileInput = useRef(null);
         const[image, setImage] = useState(null);
         const[previewUrl, setPreviewUrl] = useState(""); 
+        const dispatch = useDispatch();
         
-        //other codes follows...
     
 
     const handleFile = file => {
-        //you can carry out any file validations here...
+       
         setImage(file);
         setPreviewUrl(URL.createObjectURL(file));
        
@@ -69,14 +69,11 @@ const Rough = () => {
                  </div> }
                  
          </div>
-         <button class='btn' style={{backgroundColor:'#387BAA', color:'white'}} onClick={()=> this.props.fileUpload(image)|| console.log(image)}>Select</button>
+         <button class='btn' style={{backgroundColor:'#387BAA', color:'white'}} onClick={()=> dispatch(fileUpload(previewUrl)) }>Select</button>
+         <Link to='/'><button class='btn bg-dark m-2' style={{color:'white'}}>Close</button></Link>
         
         </>
     )
 }
+export default Rough;
 
-const mapDispatchToProps = {
-    fileUpload
-   };
-
-export default connect(null, mapDispatchToProps)(Rough);

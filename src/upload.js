@@ -47,15 +47,15 @@ class upload extends Component {
             <div class="container">
                
                 
-                   <div class="row" style={{marginTop:'10%', marginLeft: '15%'}}>
+                   <div class="row" style={{marginTop:'10%', marginLeft: '10%'}}>
                        <div class="col-lg bg-white" style={{borderTopLeftRadius:'10px'}}>
                        <div style={{marginTop:'4%'}} class='container'>
-                            <Link to='/' class='row'> <div>X</div></Link>
+                            <Link to='/'> <div class='bg-dark btn' style={{color:'white'}}>X</div></Link>
                            <h4>Select Image </h4>
 
                            {this.state.isGallery ?  <div style={{paddingTop:'15px'}}><a class="line">Gallery</a><a onClick={()=> this.setState({isGallery: false})} style={{marginLeft:'10px', cursor: 'default'}}>Upload</a></div>: 
                             <div onClick={()=> this.setState({isGallery: true})} style={{paddingTop:'15px'}}><a>Gallery</a><a class="line" style={{marginLeft:'10px'}}>Upload</a></div>}
-                            <div class='blueline'></div>
+                            <div class='blueline greyline'></div>
                            <div>
                             {this.state.isGallery?   
                             <div>
